@@ -6,6 +6,7 @@ import sys
 
 '''
 Usage:  ./mycpb.py save <keyword> - saves clipboard 
+        ./mycpb.py delete <keyword> - deletes content under keyword 
         ./mycpb.py <keyword>  - saves information from file to clipboard
         ./mycpb.py list - loads everything you have copied 
         ./mycpb.py show - shows everything you have copied 
@@ -19,7 +20,11 @@ if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     myclipBShelf[sys.argv[2]] = pyperclip.paste()
     print("The content of clipboard saved under the keyword:", sys.argv[2])
     print("************************************************************************")
-
+elif len(sys.argv) == 3 and sys.argv[1].lower() == 'delete':
+    print("************************************************************************")
+    del myclipBShelf[sys.argv[2]]
+    print("The content  under the keyword:", sys.argv[2], " is removed")
+    print("************************************************************************")
 elif len(sys.argv) == 2:
     if sys.argv[1].lower() == 'info':
         print("************************************************************************")
