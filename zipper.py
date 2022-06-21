@@ -3,10 +3,6 @@
 import zipfile
 import os
 
-'''
-Usage:  ./zipper.py <extension>
-        ./zipper.py info 
-'''
 
 def zipper(folder, extension,name):
 
